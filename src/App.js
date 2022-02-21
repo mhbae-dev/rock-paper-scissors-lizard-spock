@@ -1,3 +1,4 @@
+import React from 'react'
 import Header from "./components/Header";
 import Play from "./components/Play";
 import Game from "./components/Game";
@@ -11,6 +12,10 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+  const [playerChoice, setPlayerChoice] = React.useState("");
+  const [score, setScore] = React.useState(0);
+
   return (
     <>
       <div className="container">
