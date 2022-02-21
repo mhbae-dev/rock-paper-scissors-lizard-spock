@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Game = ({ score, playerChoice, setScore }) => {
   const [computer, setComputer] = React.useState("");
@@ -17,7 +18,6 @@ const Game = ({ score, playerChoice, setScore }) => {
 
   //set the final result
   function result() {
-    console.log(playerChoice, computer);
     if (
       playerChoice === "rock" &&
       (computer === "scissors" || computer === "lizard")
@@ -96,6 +96,9 @@ const Game = ({ score, playerChoice, setScore }) => {
       {playerWin === "win" && <h2>You Win</h2>}
       {playerWin === "lose" && <h2>You Lose</h2>}
       {playerWin === "draw" && <h2>It is a tie</h2>}
+      <Link to="/">
+        <div onClick={() => setComputer("")}>Play Again</div>
+      </Link>
     </div>
   );
 };
