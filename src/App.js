@@ -19,10 +19,10 @@ function App() {
   return (
     <>
       <div className="container">
-        <Header />
+        <Header score={score}/>
         <Routes>
-          <Route path="/" element={<Play />}/>
-          <Route path="/game" element={<Game />}/>
+          <Route path="/" element={<Play setChoice={setPlayerChoice}/>}/>
+          <Route path="/game" element={<Game score={score} playerChoice={playerChoice}/>}/>
         </Routes>
         <Footer />
       </div>
