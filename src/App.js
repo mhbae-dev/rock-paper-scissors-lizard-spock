@@ -22,7 +22,7 @@ function App() {
         <Header score={score}/>
         <Routes>
           <Route path="/" element={<Play setChoice={setPlayerChoice}/>}/>
-          <Route path="/game" element={<Game score={score} playerChoice={playerChoice}/>}/>
+          <Route path="/game" element={<Game score={score} playerChoice={playerChoice} setScore={setScore}/>}/>
         </Routes>
         <Footer />
       </div>
