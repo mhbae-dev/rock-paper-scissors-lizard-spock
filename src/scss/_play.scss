@@ -1,0 +1,69 @@
+.play {
+  width: 100%;
+
+  position: relative;
+  margin-top: 3.125rem;
+
+  display: flex;
+  flex-direction: column;
+
+  .pentagon {
+    position: absolute;
+    align-self: center;
+    margin-top: 4.375rem;
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+
+    .icon {
+      height: 160px;
+      width: 160px;
+      border: 18px solid;
+      border-radius: 50%;
+      transition: transform 0.2s;
+
+      &--paper {
+        @include icon($paper, $paper-gradient);
+        transform: translateX(31rem) translateY(6rem);
+
+        &:hover {
+          transform: translateX(31rem) translateY(6rem) scale(1.1);
+        }
+      }
+      &--scissors {
+        @include icon($scissors, $scissors-gradient);
+        transform: translateX(10rem) translateY(-2rem);
+
+        &:hover {
+          transform: translateX(10rem) translateY(-2rem) scale(1.1);
+        }
+      }
+      &--rock {
+        @include icon($rock, $rock-gradient);
+        transform: translateX(8rem) translateY(19rem);
+
+        &:hover {
+          transform: translateX(8rem) translateY(19rem) scale(1.1);
+        }
+      }
+      &--lizard {
+        @include icon($lizard, $lizard-gradient);
+        transform: translateX(-16rem) translateY(19rem);
+
+        &:hover {
+          transform: translateX(-16rem) translateY(19rem) scale(1.1);
+        }
+      }
+      &--spock {
+        @include icon($spock, $spock-gradient);
+        transform: translateX(-31rem) translateY(6rem);
+
+        &:hover {
+          transform: translateX(-31rem) translateY(6rem) scale(1.1);
+        }
+      }
+    }
+  }
+}
