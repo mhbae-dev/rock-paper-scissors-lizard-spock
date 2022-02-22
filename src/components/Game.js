@@ -90,17 +90,61 @@ const Game = ({ score, playerChoice, setScore }) => {
 
   return (
     <div className="game">
-      player choice: {playerChoice} <br />
-      computer choice: {computer} <br />
-      Result:
-      {playerWin === "win" && <h2>You Win</h2>}
-      {playerWin === "lose" && <h2>You Lose</h2>}
-      {playerWin === "draw" && <h2>It is a tie</h2>}
-      <Link to="/">
-        <div onClick={() => setComputer("")}>Play Again</div>
-      </Link>
+      <div className="game__you">
+        <span className="text">You Picked</span>
+        <div
+          className={`icon icon--${playerChoice} ${
+            playerWin == "win" ? `icon icon--${playerChoice}--winner` : ""
+          }`}
+        ></div>
+      </div>
+
+      {playerWin === "win" && (
+        <div className="game__play">
+          <span className="text">You Win</span>
+          <Link to="/" className="play-again" onClick={() => setComputer("")}>
+            Play Again
+          </Link>
+        </div>
+      )}
+      {playerWin === "lose" && (
+        <div className="game__play">
+          <span className="text">You Lose</span>
+          <Link to="/" className="play-again" onClick={() => setComputer("")}>
+            Play Again
+          </Link>
+        </div>
+      )}
+      {playerWin === "draw" && (
+        <div className="game__play">
+          <span className="text">It's a tie</span>
+          <Link to="/" className="play-again" onClick={() => setComputer("")}>
+            Play Again
+          </Link>
+        </div>
+      )}
+
+      <div className="game__computer">
+        <span className="text">The Computer Picked</span>
+        <div
+          className={`icon icon--${computer} ${
+            playerWin === "lose" ? `icon icon--${computer}--winner` : ""
+          }`}
+        ></div>
+      </div>
     </div>
   );
 };
 
 export default Game;
+
+//old code to view results
+// player choice: {playerChoice} <br />
+//       computer choice: {computer} <br />
+//       Result:
+//       {playerWin === "win" && <h2>You Win</h2>}
+//       {playerWin === "lose" && <h2>You Lose</h2>}
+//       {playerWin === "draw" && <h2>It is a tie</h2>}
+//       <Link to="/">
+//         <div onClick={() => setComputer("")}>Play Again</div>
+//       </Link>
