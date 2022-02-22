@@ -27,7 +27,7 @@ Visit this link to see the project live, [click here](https://rock-paper-scissor
 
 ## Demo
 
-![rockpaperScissors](https://user-images.githubusercontent.com/41869496/155079321-59597a55-5e8a-4fe0-8de4-d39621da5f37.gif)
+![rps](https://user-images.githubusercontent.com/41869496/155149087-235ef65e-16e5-4b39-a37c-441624d71f72.gif)
 
 ## Instructions for use
 
