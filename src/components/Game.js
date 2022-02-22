@@ -103,7 +103,7 @@ const Game = ({ score, playerChoice, setScore }) => {
       setScore((prevScore) => (prevScore += 1));
       computer === "rock"
         ? setResultText("Spock crushes Rock")
-        : setResultText("Spock cruches Scissors");
+        : setResultText("Spock crushes Scissors");
     } else if (
       playerChoice === "spock" &&
       (computer === "lizard" || computer === "paper")
