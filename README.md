@@ -23,11 +23,11 @@ As Sheldon explains in the series the rules are as follows :
 - Spock vaporizes Rock
 - (and as it always has) Rock crushes Scissors
 
-Visit this link to see the project live, [click here](https://mhbae-dev.github.io/web_project_3/)!
+Visit this link to see the project live, [click here](https://rock-paper-scissors-lizard-spock-rho.vercel.app/)!
 
 ## Demo
 
-![Desktop Demo](https://user-images.githubusercontent.com/41869496/153862722-7c448cf3-c1e6-4e97-bcbe-aea0f9255785.gif)
+![rockpaperScissors](https://user-images.githubusercontent.com/41869496/155079321-59597a55-5e8a-4fe0-8de4-d39621da5f37.gif)
 
 ## Instructions for use
 
