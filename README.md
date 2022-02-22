@@ -12,16 +12,16 @@ This is a expansion on the classic game of Rock, Paper, Scissors. A tribute to t
 
 As Sheldon explains in the series the rules are as follows :
 
-Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-(and as it always has) Rock crushes Scissors
+- Scissors cuts Paper
+- Paper covers Rock
+- Rock crushes Lizard
+- Lizard poisons Spock
+- Spock smashes Scissors
+- Scissors decapitates Lizard
+- Lizard eats Paper
+- Paper disproves Spock
+- Spock vaporizes Rock
+- (and as it always has) Rock crushes Scissors
 
 Visit this link to see the project live, [click here](https://mhbae-dev.github.io/web_project_3/)!
 
@@ -53,7 +53,7 @@ npm start
 To create a production build:
 
 ```sh
-npm run build-prod
+npm run build
 ```
 
 ## Technologies
