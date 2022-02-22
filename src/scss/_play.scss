@@ -42,10 +42,10 @@
       }
       &--rock {
         @include icon($rock, $rock-gradient);
-        transform: translateX(8rem) translateY(19rem);
+        transform: translateX(7rem) translateY(19rem);
 
         &:hover {
-          transform: translateX(8rem) translateY(19rem) scale(1.1);
+          transform: translateX(7rem) translateY(19rem) scale(1.1);
         }
       }
       &--lizard {
