@@ -5,6 +5,9 @@ const Game = ({ score, playerChoice, setScore }) => {
   const [computer, setComputer] = React.useState("");
   const [playerWin, setPlayerWin] = React.useState("");
 
+  //result text
+  const [resultText, setResultText] = React.useState("");
+
   //countdown
   const [counter, setCounter] = React.useState(3);
   //function to set computer choice in state
@@ -26,60 +29,90 @@ const Game = ({ score, playerChoice, setScore }) => {
     ) {
       setPlayerWin("win");
       setScore((prevScore) => (prevScore += 1));
+      computer === "scissors"
+        ? setResultText("Rock crushes Scissors")
+        : setResultText("Rock crushes Lizard");
     } else if (
       playerChoice === "rock" &&
       (computer === "spock" || computer === "paper")
     ) {
       setPlayerWin("lose");
       setScore((prevScore) => (prevScore -= 1));
+      computer === "spock"
+        ? setResultText("Spock vaporizes Rock")
+        : setResultText("Paper covers Rock");
     } else if (
       playerChoice === "paper" &&
       (computer === "rock" || computer === "spock")
     ) {
       setPlayerWin("win");
       setScore((prevScore) => (prevScore += 1));
+      computer === "rock"
+        ? setResultText("Paper covers Rock")
+        : setResultText("Paper disproves Spock");
     } else if (
       playerChoice === "paper" &&
       (computer === "scissors" || computer === "lizard")
     ) {
       setPlayerWin("lose");
       setScore((prevScore) => (prevScore -= 1));
+      computer === "scissors"
+        ? setResultText("Scissors cuts Paper")
+        : setResultText("Lizard eats Paper");
     } else if (
       playerChoice === "scissors" &&
       (computer === "paper" || computer === "lizard")
     ) {
       setPlayerWin("win");
       setScore((prevScore) => (prevScore += 1));
+      computer === "paper"
+        ? setResultText("Scissors cuts Paper")
+        : setResultText("Scissors decapitates Lizard");
     } else if (
       playerChoice === "scissors" &&
       (computer === "rock" || computer === "spock")
     ) {
       setPlayerWin("lose");
       setScore((prevScore) => (prevScore -= 1));
+      computer === "rock"
+        ? setResultText("Rock crushes Scissors")
+        : setResultText("Spock smashes Scissors");
     } else if (
       playerChoice === "lizard" &&
       (computer === "paper" || computer === "spock")
     ) {
       setPlayerWin("win");
       setScore((prevScore) => (prevScore += 1));
+      computer === "paper"
+        ? setResultText("Lizard eats Paper")
+        : setResultText("Lizard poisons Spock");
     } else if (
       playerChoice === "lizard" &&
       (computer === "rock" || computer === "scissors")
     ) {
       setPlayerWin("lose");
       setScore((prevScore) => (prevScore -= 1));
+      computer === "rock"
+        ? setResultText("Rock crushes Liard")
+        : setResultText("Scissors decapitates Lizard");
     } else if (
       playerChoice === "spock" &&
       (computer === "rock" || computer === "scissors")
     ) {
       setPlayerWin("win");
       setScore((prevScore) => (prevScore += 1));
+      computer === "rock"
+        ? setResultText("Spock crushes Rock")
+        : setResultText("Spock cruches Scissors");
     } else if (
       playerChoice === "spock" &&
       (computer === "lizard" || computer === "paper")
     ) {
       setPlayerWin("lose");
       setScore((prevScore) => (prevScore -= 1));
+      computer === "lizard"
+        ? setResultText("Lizard poisons Spock")
+        : setResultText("Paper disproves Spock");
     } else {
       setPlayerWin("draw");
     }
@@ -113,6 +146,7 @@ const Game = ({ score, playerChoice, setScore }) => {
       {playerWin === "win" && (
         <div className="game__play">
           <span className="text">You Win</span>
+          <span className="result">{resultText}</span>
           <Link to="/" className="play-again" onClick={() => setComputer("")}>
             Play Again
           </Link>
@@ -121,6 +155,7 @@ const Game = ({ score, playerChoice, setScore }) => {
       {playerWin === "lose" && (
         <div className="game__play">
           <span className="text">You Lose</span>
+          <span className="result">{resultText}</span>
           <Link to="/" className="play-again" onClick={() => setComputer("")}>
             Play Again
           </Link>
