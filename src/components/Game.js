@@ -5,6 +5,8 @@ const Game = ({ score, playerChoice, setScore }) => {
   const [computer, setComputer] = React.useState("");
   const [playerWin, setPlayerWin] = React.useState("");
 
+  //countdown
+  const [counter, setCounter] = React.useState(3);
   //function to set computer choice in state
   function computerChoice() {
     const choices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -85,8 +87,17 @@ const Game = ({ score, playerChoice, setScore }) => {
 
   //useEffect will run when the computer choice state is set
   React.useEffect(() => {
-    result();
-  }, [computer]);
+    const timer =
+      counter > 0
+        ? setInterval(() => {
+            setCounter(counter - 1);
+          }, 1000)
+        : result();
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [counter, computer]);
 
   return (
     <div className="game">
@@ -94,7 +105,7 @@ const Game = ({ score, playerChoice, setScore }) => {
         <span className="text">You Picked</span>
         <div
           className={`icon icon--${playerChoice} ${
-            playerWin == "win" ? `icon icon--${playerChoice}--winner` : ""
+            playerWin === "win" ? `icon icon--${playerChoice}--winner` : ""
           }`}
         ></div>
       </div>
@@ -125,12 +136,16 @@ const Game = ({ score, playerChoice, setScore }) => {
       )}
 
       <div className="game__computer">
-        <span className="text">The Computer Picked</span>
-        <div
-          className={`icon icon--${computer} ${
-            playerWin === "lose" ? `icon icon--${computer}--winner` : ""
-          }`}
-        ></div>
+        <span className="text">The House Picked</span>
+        {counter === 0 ? (
+          <div
+            className={`icon icon--${computer} ${
+              playerWin === "lose" ? `icon icon--${computer}--winner` : ""
+            }`}
+          ></div>
+        ) : (
+          <div className="counter">{counter}</div>
+        )}
       </div>
     </div>
   );
